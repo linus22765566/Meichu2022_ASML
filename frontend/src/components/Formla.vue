@@ -69,13 +69,15 @@
 </template>
 
 <script>
+
 // import liff from '@line/liff';
 // import { onMounted } from "vue";
     
 export default {
   name:"Formla",
     props: {
-        User: String
+        User: String,
+        profile: Object
     },
     data() {
         return {

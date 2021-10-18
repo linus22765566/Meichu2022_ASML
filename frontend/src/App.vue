@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
+     
       <router-link to="/">Home</router-link> |
       <router-link to="/about">關於這個App</router-link> |
       <router-link to="/formla">我想送食物</router-link>
