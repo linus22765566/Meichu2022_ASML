@@ -1,9 +1,9 @@
 <template>
   <form class="formla">
-      <h4>hi {{User}} 以下是表單 <br> 填寫完按下送出即可~</h4>
+      <h4>hi {{User}} {{foodName}} 以下是表單 <br> 填寫完按下送出即可~</h4>
   <div class="mb-2 mx-5">
     <label class="form-label">食物名稱</label>
-    <input class="form-control">
+    <input class="form-control" required v-model="foodName">
   </div>
 
   <div class="mb-3 mx-5">
@@ -11,22 +11,30 @@
     <input type="location" class="form-control" id="location">
   </div>
   <label for="time" class="form-label">你會待到幾點呢?</label>
-
   <div class="mb-3 mx-5 col">
     <input type="time" class="form-control"  id="time">
     </div>
-     <div class="mb-3 mx-5 col">
-    <select class="form-select">
-    <option selected>一個人最多可以拿走幾份</option>
+ <div id="timeHelp" class="form-text mb-3">(可以點擊小時鐘,直接選取時間喔!)</div>
+  <div class="row">
+
+    <div class="ms-5 col">
+    <label for="serve" class="form-label">總共有幾份</label>
+    <input type="serve" class="form-control" id="serve">
+    </div>
+     <div class="mb-4 me-5 col">
+    <label for="maxtake" class="form-label">一個人最多拿幾份</label>
+    <select class="form-select" id="maxtake">
+    
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
     <option value="4">4</option>
     <option value="5">5</option>
     </select>
-   
    </div>
-    <div id="timeHelp" class="form-text mb-5 my-(-1)">(可以點擊小時鐘,直接選取時間喔!)</div>
+  </div>
+
+   
 
     <div class="mb-3 mx-5">
     <label for="image" class="form-label">要附上食物的照片嗎?</label>
@@ -42,24 +50,24 @@
 
 
   <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  送出
+<button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        嗨嗨嗨
+        ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">繼續填寫</button>
-        <button type="button" class="btn btn-primary">確認送出</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
@@ -81,22 +89,17 @@ export default {
     },
     data() {
         return {
-        foodName: {
-            type: String,
-            default: "GG",
-            required: true
-        },
-        location: {
-            type: String,
-            required: true,
-            default: "EC020"
-        },
+        foodName:"",
+        location: "",
         time:{
-          required: true,
-            type:String,
-            
+            required: true,
+            type:String,   
         },
         serves:{
+            type:Number,
+            required: true
+        },
+        Maxtake:{
             type:Number,
             default: 2
         },
