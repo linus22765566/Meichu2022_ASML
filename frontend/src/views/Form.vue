@@ -1,7 +1,15 @@
 <template>
+  <div class="container" fluid>
+    <div id="nav">
+     
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">關於這個App</router-link> |
+      <router-link to="/formla">我想送食物</router-link>
+    </div>
   <div class="form">
     <img alt="Vue logo" src="../assets/NYCU.jpg" class="mb-3">
     <Formla v-bind:User="User" v-bind:profile="profile"/>
+  </div>
   </div>
 </template>
 
@@ -52,4 +60,16 @@ img {
     height: 110px;
 }
 
+#nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
 </style>
