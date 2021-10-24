@@ -10,6 +10,8 @@
 
 import Formla from '@/components/Formla.vue'
 import liff from '@line/liff';
+
+
 export default {
   name: 'Form',
   components: {
@@ -38,6 +40,7 @@ export default {
                 this.profile = profile;
                 this.User = profile.displayName
             })
+            
       }
   }
 }

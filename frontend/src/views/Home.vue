@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="我們是梅竹黑克松的團隊山東包子!"/>
+    <HelloWorld msg="我們是梅竹黑客松的團隊山東包子!"/>
     
   </div>
 </template>

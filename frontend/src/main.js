@@ -4,7 +4,7 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import 'bootstrap/dist/css/bootstrap.min.css'
-// import liff from '@line/liff';
+import 'bootstrap/js/dist/modal';
 Vue.config.productionTip = false
 
 // liff.init({ liffId: "1656540074-QGvA1Pdz",withLoginOnExternalBrowser: true,}).then(function() {

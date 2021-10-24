@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Form from '../views/Form.vue'
+import Detail from '../views/Detail.vue'
 // import { createRouter, createWebHistory } from "vue-router";
 
 Vue.use(VueRouter)
@@ -24,7 +25,11 @@ const routes = [
     path: '/formla',
     name: 'Form',
     component: Form
-    
+  },
+  {
+    path: '/detail/:id',
+    name: 'Detail',
+    component: Detail
   }
 ]
 
