@@ -2,7 +2,7 @@
     <div class="mx" style="width: 300px;">
         <div>
             <span class="row  mb-3" style="height: 38px">
-                <h1 class="" align="center">{{foodName}}</h1>
+                <h1 class="mt-3 mb-2" align="center">{{foodName}}</h1>
             </span>
             <div class="container">
                 <div class="row">
@@ -89,7 +89,7 @@ export default {
         var getUrlString = location.href;
         this.uid = getUrlString.substring(getUrlString.lastIndexOf('/') + 1)
         console.log(this.uid)
-        axios.get('https://0010-140-113-124-40.ngrok.io/getDetail',{
+        axios.get('https://d54f-140-113-124-40.ngrok.io/getDetail',{
           params:{
           id:this.uid
           }
@@ -111,7 +111,7 @@ export default {
         },
         submit: function(){
             var getUrlString = location.href;
-            axios.post('https://0010-140-113-124-40.ngrok.io/reserve',{
+            axios.post('https://d54f-140-113-124-40.ngrok.io/reserve',{
             id:getUrlString.substring(getUrlString.lastIndexOf('/') + 1),
             amount:this.amount
         })

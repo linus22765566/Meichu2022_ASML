@@ -75,8 +75,8 @@
             <p align="left">總共數量：{{serves}}</p>
             <p align="left">領取上限：{{Maxtake}}</p>
             <p align="left">備註：{{comment}}</p>
-            <p align="left">圖片：<img :src="preview" height="250px" width="300px"/></p>
-            
+            <p align="left">圖片：<img :src="preview" class="mb-3" height="250px" width="300px"/></p>
+            <p>(按下送出鈕需要稍微等待一下頁面重整喔~)</p>
         </div>
       </div>
       <div class="modal-footer">
@@ -148,7 +148,7 @@ export default {
         .then((res)=>{
         
       console.log(this.link)
-      axios.post('https://0010-140-113-124-40.ngrok.io/addForm',{
+      axios.post('https://d54f-140-113-124-40.ngrok.io/addForm',{
       image:res['data'].data.link,
       item: this.foodName,
       location: this.location,
