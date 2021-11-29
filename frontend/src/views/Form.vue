@@ -56,11 +56,22 @@ img {
     width: 200px;
     height: 110px;
 }
+<<<<<<< HEAD
 #nav {
   padding: 30px;
   a {
     font-weight: bold;
     color: #2c3e50;
+=======
+
+#nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+>>>>>>> d4a3b0e0095ac8e6147926e570c319f22e4df492
     &.router-link-exact-active {
       color: #42b983;
     }
