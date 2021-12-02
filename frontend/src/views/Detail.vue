@@ -1,5 +1,5 @@
 <template>
-    <div class="mx" style="width: 300px;">
+    <div class="mx" style="width: 300px; margin: 0px auto;">
         <div>
             <span class="row  mb-3" style="height: 38px margin: 10px">
                 <h1 class="mt-3 mb-2" align="center">{{foodName}}</h1>
