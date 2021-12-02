@@ -86,8 +86,9 @@ export default {
       }
     },
     beforeCreate(){
-        var getUrlString = location.href;
-        this.uid = getUrlString[getUrlString.indexOf('access_token') -4]
+        var getUrlString = location.href.split('/');
+        
+        //this.uid = getUrlString[getUrlString.LastIndexOf('/')]
         this.uid = getUrlString[(getUrlString.length)-1]
         
         axios.get('https://a6be-140-113-124-40.ngrok.io/getDetail',{
