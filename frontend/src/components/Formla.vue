@@ -148,7 +148,8 @@ export default {
         .then((res)=>{
         
       console.log(this.link)
-      axios.post('https://d54f-140-113-124-40.ngrok.io/addForm',{
+      axios.post('https://a6be-140-113-124-40.ngrok.io/addForm',{
+      name:res['data'].data.link,
       image:res['data'].data.link,
       item: this.foodName,
       location: this.location,

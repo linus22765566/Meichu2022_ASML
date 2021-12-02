@@ -1,7 +1,7 @@
 <template>
     <div class="mx" style="width: 300px;">
         <div>
-            <span class="row  mb-3" style="height: 38px">
+            <span class="row  mb-3" style="height: 38px margin: 10px">
                 <h1 class="mt-3 mb-2" align="center">{{foodName}}</h1>
             </span>
             <div class="container">
@@ -87,11 +87,12 @@ export default {
     },
     beforeCreate(){
         var getUrlString = location.href;
-        this.uid = getUrlString.substring(getUrlString.lastIndexOf('/') + 1)
-        console.log(this.uid)
-        axios.get('https://d54f-140-113-124-40.ngrok.io/getDetail',{
+        this.uid = getUrlString[getUrlString.indexOf('access_token') -4]
+        this.uid = getUrlString[(getUrlString.length)-1]
+        
+        axios.get('https://a6be-140-113-124-40.ngrok.io/getDetail',{
           params:{
-          id:this.uid
+            id:this.uid
           }
         })
             .then((response) => {
@@ -110,9 +111,9 @@ export default {
             console.log(this.amount)
         },
         submit: function(){
-            var getUrlString = location.href;
-            axios.post('https://d54f-140-113-124-40.ngrok.io/reserve',{
-            id:getUrlString.substring(getUrlString.lastIndexOf('/') + 1),
+            //var getUrlString = location.href;
+            axios.post('https://a6be-140-113-124-40.ngrok.io/reserve',{
+            id:location.href[(location.href.length)-1],
             amount:this.amount
         })
             .then( (response) => {console.log(response)

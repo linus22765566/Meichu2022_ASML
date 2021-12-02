@@ -5,6 +5,7 @@ import router from './router'
 import store from './store'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+
 // import liff from '@line/liff';
 Vue.config.productionTip = false
 
@@ -16,12 +17,18 @@ Vue.config.productionTip = false
 // }).catch(function(error) {
 //   console.log(error);
 // });
-
+router.beforeEach((to,from,next)=>{
+  if(to.meta.title){
+    document.title = to.meta.title
+  }
+  next()
+})
 new Vue({
   router,
   store,
   render: h => h(App)
 }).$mount('#app')
+
 
 
 

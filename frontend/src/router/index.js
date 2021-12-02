@@ -11,7 +11,10 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta:{
+      title:'首頁'
+    }
   },
   {
     path: '/about',
@@ -19,17 +22,26 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    meta:{
+      title:'關於app'
+    }
   },
   {
     path: '/formla',
     name: 'Form',
-    component: Form
+    component: Form,
+    meta:{
+      title:'剩食表單'
+    }
   },
   {
-    path: '/detail/:id',
+    path: '/detail/*',
     name: 'Detail',
-    component: Detail
+    component: Detail,
+    meta:{
+      title:'品項細節'
+    }
   }
 ]
 
@@ -38,5 +50,6 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
 
 export default router

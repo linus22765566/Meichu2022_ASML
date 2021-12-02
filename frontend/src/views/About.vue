@@ -15,17 +15,9 @@
 <style lang="scss">
 #nav {
   padding: 30px;
-<<<<<<< HEAD
   a {
     font-weight: bold;
     color: #2c3e50;
-=======
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
->>>>>>> d4a3b0e0095ac8e6147926e570c319f22e4df492
     &.router-link-exact-active {
       color: #42b983;
     }
