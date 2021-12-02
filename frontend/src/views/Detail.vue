@@ -16,15 +16,21 @@
         </div>
         <div class="container">
             <span class="row">
-                <div class="col d-flex align-items-center">    
+                <div class="col d-flex align-items-center" v-if="this.num_left>0">    
                     <span style="width: 70px" class="small" id="inputGroup-sizing-sm">我要領取</span>
-                    <input type="text" style="width: 50px" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" v-model="amount">
+                    <input type="text" style="width: 50px" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" v-model="amount" border-color="#ccc">
+                    
                     <span style="width: 40px" class="small" id="inputGroup-sizing-sm"> 個</span>    
                 </div>
+                <div v-if="!this.num_left>0">
+                  送完了!
+                  </div>
                 <div class="col">
-                  
+                <div class="alert alert-danger" role="alert" v-if="this.amount>this.Maxtake">
+                  不可以領超過上限!!!
+                </div>
                     <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" v-if="this.num_left>0 && this.amount<=this.Maxtake" data-bs-target="#exampleModal">
   送出表單
 </button>
 
