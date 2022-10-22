@@ -1,60 +1,43 @@
 <template>
   <div class="container" fluid>
     <div id="nav">
-     
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">關於這個App</router-link> |
-      <router-link to="/formla">我想送食物</router-link>
+      <router-link to="/">首頁</router-link> |
+      <router-link to="/formla">upload image</router-link> |
+      <router-link to="/report">report</router-link>
     </div>
-  <div class="form">
-    <img alt="Vue logo" src="../assets/NYCU.jpg" class="mb-3">
-    <Formla v-bind:User="User" v-bind:profile="profile"/>
-  </div>
+    <div class="form">
+      <img
+        src="https://www.geberconsulting.com/images/2018/07/11/clients-logo-size_-1-32.jpg"
+      />
+
+      <Formla v-bind:User="User" v-bind:profile="profile" />
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Formla from '@/components/Formla.vue'
-import liff from '@line/liff';
+
 export default {
   name: 'Form',
   components: {
     Formla
   },
-  data(){
-      return{
-          User:"",
-          profile:{}
-      };
+  data() {
+    return {
+      User: '',
+      profile: {}
+    }
   },
-  beforeCreate(){
-      liff
-        .init({
-            liffId:"1656540074-QGvA1Pdz",withLoginOnExternalBrowser: true,
-        })
-        .then(()=>{
-            this.getProfile();
-        })
-  },
-  methods:{
-      getProfile: function(){
-          liff
-            .getProfile()
-            .then((profile) =>{
-                this.profile = profile;
-                this.User = profile.displayName
-            })
-            
-      }
-  }
+  methods: {}
 }
 </script>
 
 <style scoped lang="scss">
 img {
-    width: 200px;
-    height: 110px;
+  width: 400px;
+  height: 270px;
 }
 #nav {
   padding: 30px;

@@ -1,13 +1,12 @@
 <template>
   <div class="container" fluid>
     <div id="nav">
-     
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">關於這個App</router-link> |
-      <router-link to="/formla">我想送食物</router-link>
+      <router-link to="/">首頁</router-link> |
+      <router-link to="/about">相關資訊</router-link> |
+      <router-link to="/formla">upload image</router-link>
     </div>
     <div class="about">
-      <h1>這是一個可以讓清交學生<br>在處理營隊/會議多出來的<br>食物時，更方便快速的平台</h1>
+      <h1>這是一個可以上傳defect image, 進行compare & report 的平台</h1>
     </div>
   </div>
 </template>

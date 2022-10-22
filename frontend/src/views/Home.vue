@@ -1,16 +1,17 @@
 <template>
   <div class="container" fluid>
     <div id="nav">
-     
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">關於這個App</router-link> |
-      <router-link to="/formla">我想送食物</router-link>
+      <router-link to="/">首頁</router-link> |
+      <router-link to="/formla">upload image</router-link> |
+      <router-link to="/report">report</router-link>
     </div>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="我們是梅竹黑客松的團隊山東包子!"/>
-    
-  </div>
+    <div class="home">
+      <img
+        class="mb-3"
+        src="https://inside-assets1.inside.com.tw/2020/12/kq10py4yek33hsjg7mz4ulkq3z03t9.jpg?auto=compress&fit=crop&h=675&w=1200"
+      />
+      <HelloWorld msg="我們是梅竹黑客松的交大資工宇宙戰艦!" />
+    </div>
   </div>
 </template>
 
@@ -23,13 +24,12 @@ export default {
     HelloWorld
   }
 }
-
 </script>
 
 <style scoped lang="scss">
 img {
-    width: 200px;
-    height: 110px;
+  width: 400px;
+  height: 210px;
 }
 #nav {
   padding: 30px;

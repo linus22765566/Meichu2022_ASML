@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Form from '../views/Form.vue'
-import Detail from '../views/Detail.vue'
+import Report from '../views/Report.vue'
 // import { createRouter, createWebHistory } from "vue-router";
 
 Vue.use(VueRouter)
@@ -12,8 +12,8 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
-    meta:{
-      title:'首頁'
+    meta: {
+      title: '首頁'
     }
   },
   {
@@ -23,24 +23,24 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
-    meta:{
-      title:'關於app'
+    meta: {
+      title: '關於app'
     }
   },
   {
     path: '/formla',
     name: 'Form',
     component: Form,
-    meta:{
-      title:'剩食表單'
+    meta: {
+      title: '上傳圖片'
     }
   },
   {
-    path: '/detail/*',
-    name: 'Detail',
-    component: Detail,
-    meta:{
-      title:'品項細節'
+    path: '/report',
+    name: 'Report',
+    component: Report,
+    meta: {
+      title: '報告'
     }
   }
 ]
